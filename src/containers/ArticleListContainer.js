@@ -27,9 +27,15 @@ class ArticleListContainer extends Component {
 
   render () {
     const {posts} = this.props
+
+    posts.forEach((item, index) => {
+      const year = new Date(item.fields.date).getUTCFullYear()
+      console.log(year);
+    })
+
     const postsList = posts.map((item) => {
       const year = new Date(item.fields.date).getUTCFullYear()
-      console.log(year)
+      // console.log(year)
       // if (year != previousYear) {}
       return (
         <div className="contentList-group">
