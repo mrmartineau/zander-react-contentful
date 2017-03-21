@@ -13,7 +13,8 @@ class ArticleListContainer extends Component {
   componentDidMount () {
     console.log('\x1b[ Fetching entries ... \x1b[')
     client.getEntries({
-      content_type: 'article'
+      content_type: 'article',
+      order: 'sys.createdAt',
     })
       .then((response) => {
         this.props.handleSetPosts(response.items)
