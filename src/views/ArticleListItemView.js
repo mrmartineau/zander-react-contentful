@@ -4,7 +4,6 @@ import months from '../utils/months'
 const ArticleListItemView = (props) => {
   const formattedDate = new Date(props.date)
   return (
-    <div>
     <li key='{props.key}'>
       <a className='infoLink' href='{props.url}' title='Read "{props.title}"'>
         <div className='infoLink-content'>
@@ -18,7 +17,6 @@ const ArticleListItemView = (props) => {
         <time className='infoLink-date'>{formattedDate.getDay()} {months[formattedDate.getMonth()]}</time>
       </a>
     </li>
-    </div>
   )
 }
 

@@ -9,11 +9,7 @@ const client = createClient({
   accessToken: ACCESS_TOKEN
 })
 
-export default class ArticleListContainer extends Component {
-  constructor (props) {
-    super(props)
-  }
-
+class ArticleListContainer extends Component {
   componentDidMount () {
     console.log('\x1b[ Fetching entries ... \x1b[')
     client.getEntries({
@@ -29,26 +25,22 @@ export default class ArticleListContainer extends Component {
   }
 
   render () {
-    console.log('this.props', this.props)
-    const {posts} = this.props.posts;
+    const {posts} = this.props
     return (
-        // <ArticleListItemView
-        //         title='Zander'
-        //         subtitle='Test'
-        //         date='345678909876'
-        //         key='1'
-        //         />
-      {
-        posts
-          .map(item => (
-              <ArticleListItemView
-                title={item.fields.title}
-                subtitle={item.fields.subtitle}
-                date={item.fields.date}
-                key={item.sys.id}
-                />
-            )
-      }
+      <ul>
+        {
+          posts.map((item) => (
+            <ArticleListItemView
+              title={item.fields.title}
+              subtitle={item.fields.subtitle}
+              date={item.fields.date}
+              key={item.sys.id}
+            />
+          ))
+        }
+      </ul>
     )
   }
 }
+
+export default ArticleListContainer
