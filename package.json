@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "contentful": "beta",
+    "dashify": "^0.2.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-redux": "^5.0.3",

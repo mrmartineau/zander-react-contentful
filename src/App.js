@@ -5,10 +5,11 @@ import './App.css';
 export default class App extends Component {
   constructor(props) {
     super(props);
-    this.state = {
-      posts: [],
-    }
     this.handleSetPosts = this.handleSetPosts.bind(this);
+  }
+
+  state = {
+    posts: []
   }
 
   handleSetPosts(response) {
@@ -22,9 +23,7 @@ export default class App extends Component {
           <h2>Zander Martineau</h2>
         </div>
 
-        <ul>
-          <ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
-        </ul>
+        <ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
       </div>
     )
   }
