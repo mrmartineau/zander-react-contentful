@@ -1,30 +1,27 @@
-import React, { Component } from 'react';
-import ArticleListContainer from './containers/ArticleListContainer'
+import React from 'react';
+import {
+  BrowserRouter as Router,
+  Route
+} from 'react-router-dom'
 import './App.css';
+import Home from './routes/Home'
+import Articles from './routes/Articles'
+import Work from './routes/Work'
+import Styleguide from './routes/Styleguide'
+import Masthead from './partials/Masthead'
+import Footer from './partials/Footer'
 
-export default class App extends Component {
-  constructor(props) {
-    super(props);
-    this.handleSetPosts = this.handleSetPosts.bind(this);
-  }
+const App = () => (
+  <Router>
+    <div>
+      <Masthead />
+      <Route exact path="/" component={Home}/>
+      <Route path="/articles" component={Articles}/>
+      <Route path="/work" component={Work}/>
+      <Route path="/styleguide" component={Styleguide}/>
+      <Footer />
+    </div>
+  </Router>
+)
 
-  state = {
-    posts: []
-  }
-
-  handleSetPosts(response) {
-    this.setState({posts: response})
-  }
-
-  render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <h2>Zander Martineau</h2>
-        </div>
-
-        <ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
-      </div>
-    )
-  }
-}
+export default App;

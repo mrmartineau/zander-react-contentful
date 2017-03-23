@@ -26,41 +26,32 @@ class ArticleListContainer extends Component {
   }
 
   render () {
-    const {posts} = this.props
-
-    posts.forEach((item, index) => {
-      const year = new Date(item.fields.date).getUTCFullYear()
-      console.log(year);
-    })
-
+    const {posts} = this.props;
+    console.log('posts', posts);
     const postsList = posts.map((item) => {
-      const year = new Date(item.fields.date).getUTCFullYear()
-      // console.log(year)
-      // if (year != previousYear) {}
+      const {title, subtitle, date} = item.fields;
+      const id = item.sys.id;
       return (
-        <div className="contentList-group">
-          <aside className="contentList-group-year" role="complementary">
-            {year}
-          </aside>
-          <ul className="contentList-group-items">
-            <ArticleListItemView
-              title={item.fields.title}
-              subtitle={item.fields.subtitle}
-              date={item.fields.date}
-              key={item.sys.id}
-            />
-          </ul>
-        </div>
+        <ArticleListItemView
+          title={title}
+          subtitle={subtitle}
+          date={date}
+          key={id}
+        />
       )
     })
 
     return (
       <div className="contentList">
-        {
-          posts.length > 0 ?
-            postsList
-          : <div>Loading</div>
-        }
+        <div className="contentList-group">
+          <ul className="contentList-group-items">
+            {
+              posts.length > 0 ?
+                postsList
+              : <div>Loading</div>
+            }
+          </ul>
+        </div>
       </div>
     )
   }

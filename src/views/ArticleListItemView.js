@@ -3,16 +3,17 @@ import dashify from 'dashify'
 import months from '../utils/months'
 
 const ArticleListItemView = (props) => {
-  const formattedDate = new Date(props.date)
-  const url = `/articles/${dashify(props.title)}`
+  const {title, subtitle, date} = props;
+  const formattedDate = new Date(date)
+  const url = `/articles/${dashify(title)}`
   return (
-    <li key={props.key}>
-      <a className='infoLink' href={url} title={'Read ' + props.title}>
+    <li>
+      <a className='infoLink' href={url} title={'Read ' + title}>
         <div className='infoLink-content'>
-          <div className='infoLink-content-title'>{props.title}</div>
+          <div className='infoLink-content-title'>{title}</div>
           {
-            props.excerpt ?
-              <div className='infoLink-content-excerpt'>{props.excerpt}</div>
+            subtitle ?
+              <div className='infoLink-content-excerpt'>{subtitle}</div>
             : null
           }
         </div>
