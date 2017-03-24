@@ -12,12 +12,18 @@ const client = createClient({
 class ArticleListContainer extends Component {
   componentDidMount () {
     console.log('\x1b[ Fetching entries ... \x1b[')
+    if (window.localStorage.getItem('posts')) {
+      this.props.handleSetPosts(JSON.parse(window.localStorage.getItem('posts')))
+      return;
+    }
+
     client.getEntries({
       content_type: 'article',
       order: 'sys.createdAt',
     })
       .then((response) => {
         this.props.handleSetPosts(response.items)
+        window.localStorage.setItem('posts', JSON.stringify(response.items))
       })
       .catch((error) => {
         console.log('\x1b[error occured')
@@ -36,6 +42,7 @@ class ArticleListContainer extends Component {
           title={title}
           subtitle={subtitle}
           date={date}
+          id={id}
           key={id}
         />
       )

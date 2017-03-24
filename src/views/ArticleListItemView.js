@@ -1,11 +1,12 @@
 import React from 'react'
-import dashify from 'dashify'
+// import dashify from 'dashify'
 import months from '../utils/months'
 
 const ArticleListItemView = (props) => {
-  const {title, subtitle, date} = props;
+  const {title, subtitle, date, id} = props;
   const formattedDate = new Date(date)
-  const url = `/articles/${dashify(title)}`
+  // const url = `/articles/${dashify(title)}`
+  const url = `/articles/${id}`
   return (
     <li>
       <a className='infoLink' href={url} title={'Read ' + title}>
