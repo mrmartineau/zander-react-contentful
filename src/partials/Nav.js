@@ -13,7 +13,7 @@ const Nav = (props) => {
       }
       {
         props.extras &&
-          <Link to="http://github.com/mrmartineau/zander.wtf" activeClassName="is-active" title="Fork this site's source code" className="nav-link">Source</Link>
+          <Link to="http://github.com/mrmartineau/zander.wtf" title="Fork this site's source code" className="nav-link">Source</Link>
       }
     </nav>
   )
