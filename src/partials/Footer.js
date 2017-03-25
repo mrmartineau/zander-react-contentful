@@ -1,12 +1,12 @@
 import React from 'react'
 import Nav from './Nav'
 import NavSocial from './NavSocial'
+import Bio from '../views/Bio'
 
 const Footer = () => (
   <footer role="contentinfo" className="footer">
     <div className="l-container">
-      <h1>👋</h1>
-      bio
+      <Bio />
       <hr className="hr--short"/>
       <Nav className="nav--footer" extras />
       <NavSocial />
