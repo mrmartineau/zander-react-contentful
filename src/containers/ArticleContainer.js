@@ -1,13 +1,6 @@
 import React, { Component } from 'react'
-import { createClient } from 'contentful'
+import { getEntry } from '../utils/contentful'
 import ArticleView from '../views/ArticleView'
-
-const SPACE_ID = 'stjy307y3wj0'
-const ACCESS_TOKEN = '6762def0bcd0ce026042e11460ffbb611396a4709c76a6ac0a9a86b4a8db2969'
-const client = createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN
-})
 
 class ArticleContainer extends Component {
   state = {
@@ -20,7 +13,7 @@ class ArticleContainer extends Component {
       this.setState({content: JSON.parse(window.localStorage.getItem(this.props.id))})
       return;
     }
-    client.getEntry(this.props.id)
+    getEntry(this.props.id)
       .then((response) => {
         this.setState({content: response.fields})
         window.localStorage.setItem(this.props.id, JSON.stringify(response.fields))

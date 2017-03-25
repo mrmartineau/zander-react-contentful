@@ -1,23 +1,16 @@
 import React, { Component } from 'react'
-import { createClient } from 'contentful'
+import { getEntries } from '../utils/contentful'
 import ArticleListItemView from '../views/ArticleListItemView'
-
-const SPACE_ID = 'stjy307y3wj0'
-const ACCESS_TOKEN = '6762def0bcd0ce026042e11460ffbb611396a4709c76a6ac0a9a86b4a8db2969'
-const client = createClient({
-  space: SPACE_ID,
-  accessToken: ACCESS_TOKEN
-})
 
 class ArticleListContainer extends Component {
   componentDidMount () {
-    console.log('\x1b[ Fetching entries ... \x1b[')
     if (window.localStorage.getItem('posts')) {
       this.props.handleSetPosts(JSON.parse(window.localStorage.getItem('posts')))
       return;
     }
+    console.log('Fetching entries...')
 
-    client.getEntries({
+    getEntries({
       content_type: 'article',
       order: 'sys.createdAt',
     })
