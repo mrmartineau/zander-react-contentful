@@ -1,0 +1,95 @@
+html {
+	box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+	box-sizing: inherit;
+}
+
+html {
+	background-color: $color-bg;
+	cursor: url(/assets/img/cursors/fore-finger@0,5x.png) 7 2, auto !important;
+}
+
+/**
+ * Default layout container
+ */
+.l-container {
+	margin-left: 10%;
+	margin-right: 10%;
+	max-width: 30rem;
+}
+
+.l-containerWide {
+	padding-left: calc($common-spacing / 2);
+	padding-right: calc($common-spacing / 2);
+	margin: 0 auto;
+
+	@media >narrow {
+		padding-left: 0;
+		padding-right: 0;
+	}
+}
+
+main {
+	overflow: hidden;
+	margin-top: 10%;
+}
+
+.content {
+	/* padding: 2rem 10%; */
+}
+
+.content--article {
+	p img {
+		margin-bottom: $baseline;
+	}
+}
+
+
+.sectionHeading {
+	@media >mid {
+		margin-left: 25%;
+	}
+}
+
+.offsetAnchor {
+	&:before {
+		content: '';
+		display: block;
+		content: " ";
+		height: ($common-spacing + 30);  /* Give height of your fixed element */
+		margin-top: -($common-spacing + 30); /* Give negative margin of your fixed element */
+		visibility: hidden;
+	}
+}
+
+
+/*Kickoff*/
+.kickoffLogo {
+	width: 220px;
+	height: 62px;
+	margin: 0 auto 1rem;
+	display: block;
+
+	@media >mid {
+		width: 300px;
+		height: 150px;
+	}
+}
+
+img {
+	max-width: 100%;
+}
+
+/**
+ * Unstyled lists
+ */
+.unstyled {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	list-style-image: none;
+}

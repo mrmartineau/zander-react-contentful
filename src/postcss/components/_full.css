@@ -1,0 +1,86 @@
+.full,
+div.highlighter-rouge {
+	position: relative;
+	clear: both;
+
+	&:before,
+	&:after {
+		content: '';
+		width: 200%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+	}
+
+	&:before {
+		right: 100%;
+	}
+
+	&:after {
+		left: 100%;
+	}
+
+	&--dark {
+		background-color: $color-primary;
+		color: $bright;
+		padding-top: 2rem;
+		padding-bottom: 2rem;
+
+		&:before,
+		&:after {
+			background-color: $color-primary;
+		}
+
+	}
+
+	&--code {
+		background-color: $color-frame;
+
+		&:before,
+		&:after {
+			background-color: $color-frame;
+		}
+	}
+
+	&--kickoff {
+		background-color: $kickoff-blue;
+		color: $kickoff-orange;
+		padding: $common-spacing 0;
+		margin-bottom: -2rem;
+
+		&:before,
+		&:after {
+			background-color: $kickoff-blue;
+		}
+
+		a:not([class]) {
+			color: $kickoff-orange;
+
+			&:hover {
+				color: $bright;
+			}
+		}
+	}
+
+	&--projects {
+		color: $orange;
+		padding: $common-spacing 0;
+
+		a:not([class]) {
+			color: $orange;
+
+			&:hover {
+				color: $bright;
+			}
+		}
+	}
+}
+
+div.highlighter-rouge {
+	background-color: $pre-bgColor;
+
+	&:before,
+	&:after {
+		background-color: $pre-bgColor;
+	}
+}

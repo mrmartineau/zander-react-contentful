@@ -1,0 +1,41 @@
+/**
+ * Links
+ */
+a {
+	transition: $default-transition;
+	cursor: url(/assets/img/cursors/middle-finger@0,5x.png) 10 2, pointer !important;
+
+	&, &:link, &:visited {
+		color: $color-text;
+		text-decoration: none;
+	}
+
+	&:hover, &:focus {
+		color: $color-link-default;
+	}
+
+	&:active {
+		color: $color-link-active;
+	}
+}
+
+.pagination {}
+
+.pagination-btn {
+	margin-right: 1rem;
+}
+
+.article a,
+p a {
+	&, &:link, &:visited {
+		color: $color-link-default;
+		text-decoration: none;
+	}
+
+	&:hover, &:focus {
+		/*border-bottom: 2px solid $color-link-default;*/
+		/*font-weight: bold;*/
+		/*letter-spacing: 0.1em;*/
+		color: $color-link-hover;
+	}
+}

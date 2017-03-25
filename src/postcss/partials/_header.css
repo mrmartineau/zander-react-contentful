@@ -1,0 +1,38 @@
+.header {
+	position: relative;
+	margin-bottom: 10%;
+
+	.header-inner {
+		display: flex;
+		flex-direction: column;
+	}
+}
+
+.header-img,
+.header-logo {
+	width: 8rem;
+	background-size: cover;
+	background-position: center center;
+	margin: 0 auto 1rem;
+	order: 1;
+}
+
+.header-img {
+	height: 8rem;
+	border-radius: 50%;
+}
+
+.header-logo {
+	fill: $color-text;
+	height: 4rem;
+}
+
+.header-meta {
+	text-transform: uppercase;
+	font-size: $type-small;
+	color: ;
+}
+
+.header-subtitle {
+	font-size: $type-base;
+}

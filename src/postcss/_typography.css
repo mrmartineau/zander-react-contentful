@@ -1,0 +1,183 @@
+/**
+ * Typography
+ * - Base
+ * - Paragraphs
+ * - Headings
+ * - Type sizes
+ * - Misc
+ * - Utilities
+ *
+ * Body font size, leadings etc have been set in _variables.scss
+ * http://modularscale.com/
+ *
+ */
+
+/*@media >mid {
+	@font-face {
+		font-family: Colfax;
+		font-weight: normal;
+		src: url('fonts/ColfaxWebRegularSub.woff') format('woff');
+	}
+
+	@font-face {
+		font-family: Colfax;
+		font-weight: bold;
+		src: url('fonts/ColfaxWebBoldSub.woff') format('woff');
+	}
+}*/
+
+html {
+	-webkit-text-size-adjust: 100%;
+	font-size: var(--font-size-base);
+}
+
+body {
+	font-size: $type-base;
+	font-family: $font-family-base;
+	line-height: $leading-base;
+	color: $color-text;
+	font-weight: 300;
+	font-feature-settings: "liga","dlig", "hist";
+	font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
+}
+
+/**
+ * Paragraphs
+ */
+p {
+	font-family: $font-family-base;
+	margin-top: 0;
+	margin-bottom: $baseline;
+	font-size: $type-small;
+
+	@media >narrow {
+		font-size: $type-base;
+	}
+}
+
+/**
+ * Headings
+ */
+h1, h2, h3, h4, h5, h6 {
+	font-family: $font-family-headings;
+	font-weight: $font-weight-headings;
+	line-height: $line-height-headings;
+	text-rendering: optimizelegibility;
+	margin-top: 0;
+	margin-bottom: $baseline;
+
+	small {
+		font-weight: normal;
+	}
+}
+
+h1 {
+	font-size: $type-large;
+
+	@media >narrow {
+		font-size: $type-jumbo;
+	}
+}
+
+h2 {
+	font-size: $type-mid;
+
+	@media >narrow {
+		font-size: $type-large;
+	}
+}
+
+h3,
+h4 {
+	font-size: $type-base;
+
+	@media >narrow {
+		font-size: $type-mid;
+	}
+}
+
+h4 {
+	margin-bottom: 0;
+}
+
+h5,
+h6 {
+	font-size: $type-small;
+	margin-bottom: 0;
+
+	@media >narrow {
+		font-size: $type-base;
+	}
+}
+
+* + h1,
+* + h2,
+* + h3,
+* + h4 {
+	margin-top: $baseline;
+}
+
+small {
+	font-size: 80%;
+}
+
+/**
+ * Miscellaneous
+ */
+
+abbr[title] {
+	border-bottom: 1px dotted #ddd;
+	cursor: help;
+}
+
+/**
+ * Blockquotes
+ */
+blockquote {
+	margin: 30px 30px 30px 0;
+	padding: 15px 0 15px 30px;
+	border-left: 4px solid $color-primary;
+	color: $color-primary;
+
+	p {
+		margin-bottom: 0;
+		font-size: $type-mid;
+	}
+
+	small {
+		display: block;
+
+		&:before {
+			content: '\2014 \00A0';
+		}
+	}
+}
+
+
+/**
+ * Utilities
+ */
+.text-center {
+	text-align: center;
+}
+
+.text-left {
+	text-align: left;
+}
+
+.text-right {
+	text-align: right;
+}
+
+/* @include text-selection($color-selection, $color-selection-bg); */
+
+hr {
+	margin: 60px auto;
+	border: 0;
+	border-top: 2px solid #ddd;
+	width: 40%;
+}
+
+.hr--short {
+	margin: 60px 0;
+}
