@@ -17,10 +17,11 @@ export default class Articles extends Component {
 
   render() {
     return (
-			<div>
-				Articles
-				<ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
-			</div>
+      <div className="l-container content">
+        <div className="contentList">
+          <ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
+        </div>
+      </div>
     )
   }
 }

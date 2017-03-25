@@ -28,7 +28,7 @@ class ArticleContainer extends Component {
   render () {
     // const {posts} = this.state;
     // console.log('posts', posts);
-    const {title, subtitle, date, body} = this.state.content;
+    const {title, subtitle, date, body, originalUrl} = this.state.content;
 
     return (
       <div>
@@ -38,6 +38,7 @@ class ArticleContainer extends Component {
           subtitle={subtitle}
           date={date}
           body={body}
+          originalUrl={originalUrl}
         /> }
       </div>
     )

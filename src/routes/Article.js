@@ -4,10 +4,9 @@ import ArticleContainer from '../containers/ArticleContainer'
 const Article = ({match}) => {
 
   return (
-    <article>
-      <h1>Article</h1>
+    <div>
       <ArticleContainer id={match.params.id} />
-    </article>
+    </div>
   )
 }
 

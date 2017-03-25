@@ -1,5 +1,6 @@
 import React from 'react'
 // import dashify from 'dashify'
+import {Link} from 'react-router-dom'
 import months from '../utils/months'
 
 const ArticleListItemView = (props) => {
@@ -9,7 +10,7 @@ const ArticleListItemView = (props) => {
   const url = `/articles/${id}`
   return (
     <li>
-      <a className='infoLink' href={url} title={'Read ' + title}>
+      <Link className='infoLink' to={url} title={'Read ' + title}>
         <div className='infoLink-content'>
           <div className='infoLink-content-title'>{title}</div>
           {
@@ -19,7 +20,7 @@ const ArticleListItemView = (props) => {
           }
         </div>
         <time className='infoLink-date'>{formattedDate.getDay()} {months[formattedDate.getMonth()]}</time>
-      </a>
+      </Link>
     </li>
   )
 }
