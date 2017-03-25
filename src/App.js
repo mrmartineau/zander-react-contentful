@@ -3,11 +3,9 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
-import './App.css';
-import Home from './routes/Home'
-import Articles from './routes/Articles'
-import Article from './routes/Article'
-import Work from './routes/Work'
+import Articles from './Articles/ArticlesRoute'
+import Article from './Article/ArticleRoute'
+import Work from './Work/Work'
 import Styleguide from './routes/Styleguide'
 import Masthead from './partials/Masthead'
 import Footer from './partials/Footer'

@@ -1,8 +1,7 @@
 import React from 'react'
-import ArticleContainer from '../containers/ArticleContainer'
+import ArticleContainer from './ArticleContainer'
 
 const Article = ({match}) => {
-
   return (
     <div>
       <ArticleContainer id={match.params.id} />

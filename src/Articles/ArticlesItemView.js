@@ -3,13 +3,13 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 import months from '../utils/months'
 
-const ArticleListItemView = (props) => {
+const ArticlesItemView = (props) => {
   const {title, subtitle, date, id} = props;
   const formattedDate = new Date(date)
   // const url = `/articles/${dashify(title)}`
   const url = `/articles/${id}`
   return (
-    <li>
+    <li className="contentList-group-items-item">
       <Link className='infoLink' to={url} title={'Read ' + title}>
         <div className='infoLink-content'>
           <div className='infoLink-content-title'>{title}</div>
@@ -19,10 +19,10 @@ const ArticleListItemView = (props) => {
             : null
           }
         </div>
-        <time className='infoLink-date'>{formattedDate.getDay()} {months[formattedDate.getMonth()]}</time>
+        <time className='infoLink-date'>{formattedDate.getDay()} {months[formattedDate.getMonth()]} {formattedDate.getUTCFullYear()}</time>
       </Link>
     </li>
   )
 }
 
-export default ArticleListItemView
+export default ArticlesItemView

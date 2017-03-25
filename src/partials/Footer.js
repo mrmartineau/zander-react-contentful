@@ -1,7 +1,7 @@
 import React from 'react'
 import Nav from './Nav'
 import NavSocial from './NavSocial'
-import Bio from '../views/Bio'
+import Bio from './Bio'
 
 const Footer = () => (
   <footer role="contentinfo" className="footer">

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { getEntry } from '../utils/contentful'
-import ArticleView from '../views/ArticleView'
+import ArticleView from './ArticleView'
 
 class ArticleContainer extends Component {
   state = {

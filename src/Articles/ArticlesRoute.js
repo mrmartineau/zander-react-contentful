@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ArticleListContainer from '../containers/ArticleListContainer'
+import ArticlesContainer from './ArticlesContainer'
 
 export default class Articles extends Component {
   constructor(props) {
@@ -19,7 +19,7 @@ export default class Articles extends Component {
     return (
       <div className="l-container content">
         <div className="contentList">
-          <ArticleListContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
+          <ArticlesContainer handleSetPosts={this.handleSetPosts} posts={this.state.posts} />
         </div>
       </div>
     )

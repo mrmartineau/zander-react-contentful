@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import { getEntries } from '../utils/contentful'
-import ArticleListItemView from '../views/ArticleListItemView'
+import ArticlesItemView from './ArticlesItemView'
 
-class ArticleListContainer extends Component {
+class ArticlesContainer extends Component {
   componentDidMount () {
     if (window.localStorage.getItem('posts')) {
       this.props.handleSetPosts(JSON.parse(window.localStorage.getItem('posts')))
@@ -31,7 +31,7 @@ class ArticleListContainer extends Component {
       const {title, subtitle, date} = item.fields;
       const id = item.sys.id;
       return (
-        <ArticleListItemView
+        <ArticlesItemView
           title={title}
           subtitle={subtitle}
           date={date}
@@ -57,4 +57,4 @@ class ArticleListContainer extends Component {
   }
 }
 
-export default ArticleListContainer
+export default ArticlesContainer
