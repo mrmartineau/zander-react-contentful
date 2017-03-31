@@ -1,20 +1,47 @@
-import { SET_ARTICLES, FETCH_WORK } from './actions'
-import { getEntries } from '../utils/contentful'
+import {
+  FETCH_ARTICLES,
+  ADD_ARTICLE,
+  FETCH_WORK
+} from './actions'
+import { getEntries, getEntry } from '../utils/contentful'
 
+// Add a single article
+export const addArticle = (fields, id) => {
+  return {
+    type: ADD_ARTICLE,
+    fields,
+    id
+  }
+}
+
+// Fetch a single article
+export const fetchArticle = (id) => {
+  return function (dispatch, getState) {
+    console.log('Fetching entry...')
+    getEntry(id)
+      .then((response) => {
+        console.log(response);
+        dispatch(addArticle(response.fields, id))
+      })
+      .catch((error) => {
+        console.log('error occured')
+        console.log(error)
+      })
+  }
+}
+
+
+// Add all articles for the listing view
 export const setArticles = (articles) => {
   return {
-    type: SET_ARTICLES,
+    type: FETCH_ARTICLES,
     articles
   }
 }
 
-export function fetchArticles () {
+// Fetch all articles
+export const fetchArticles = () => {
   return function (dispatch, getState) {
-    // if (window.localStorage.getItem('articles')) {
-    //   dispatch(fetchArticles(JSON.parse(window.localStorage.getItem('articles')))
-    //   return;
-    // }
-
     console.log('Fetching entries...')
     getEntries({
       content_type: 'article',
@@ -22,9 +49,7 @@ export function fetchArticles () {
       select: 'sys,fields.title,fields.subtitle,fields.date',
     })
     .then((response) => {
-      // console.log('response', response);
       dispatch(setArticles(response.items))
-      window.localStorage.setItem('articles', JSON.stringify(response.items))
     })
     .catch((error) => {
       console.log('error occured')
@@ -33,6 +58,8 @@ export function fetchArticles () {
   }
 }
 
+
+// Fetch all work items
 export const fetchWork = (work) => {
   return {
     type: FETCH_WORK,

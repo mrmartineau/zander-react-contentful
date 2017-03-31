@@ -1,34 +1,17 @@
 import React, { Component } from 'react'
-import { getEntry } from '../utils/contentful'
+import { connect } from 'react-redux'
 import ArticleView from './ArticleView'
+import { fetchArticle } from '../state/actionCreators'
 
 class ArticleContainer extends Component {
-  state = {
-    content: {}
-  }
-
   componentDidMount () {
-    console.log('Fetching entry...')
-    if (window.localStorage.getItem(this.props.id)) {
-      this.setState({content: JSON.parse(window.localStorage.getItem(this.props.id))})
-      return;
+    if (!this.props.fields.title) {
+      this.props.dispatch(fetchArticle(this.props.id))
     }
-    getEntry(this.props.id)
-      .then((response) => {
-        this.setState({content: response.fields})
-        window.localStorage.setItem(this.props.id, JSON.stringify(response.fields))
-        console.log(response.fields);
-      })
-      .catch((error) => {
-        console.log('error occured')
-        console.log(error)
-      })
   }
 
   render () {
-    // const {posts} = this.state;
-    // console.log('posts', posts);
-    const {title, subtitle, date, body, originalUrl} = this.state.content;
+    const {title, subtitle, date, body, originalUrl} = this.props.fields;
 
     return (
       <div>
@@ -47,4 +30,11 @@ class ArticleContainer extends Component {
   }
 }
 
-export default ArticleContainer
+const mapStateToProps = (state, ownProps) => {
+  const articleData = state.article[ownProps.id] ? state.article[ownProps.id] : {}
+  return {
+    fields: articleData,
+  }
+}
+
+export default connect(mapStateToProps)(ArticleContainer)
