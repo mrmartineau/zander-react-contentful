@@ -5,11 +5,6 @@ import { fetchArticles } from '../state/actionCreators'
 
 class ArticlesContainer extends Component {
   componentDidMount () {
-    // if (window.localStorage.getItem('articles')) {
-    //   this.handleFetchArticles(JSON.parse(window.localStorage.getItem('articles')))
-    //   return;
-    // }
-
     if (this.props.articles.length < 1) {
       this.props.dispatch(fetchArticles())
     }
@@ -17,7 +12,6 @@ class ArticlesContainer extends Component {
 
   render () {
     const { articles } = this.props;
-    // console.log('articles', articles);
     const articlesList = articles.map((item) => {
       const {title, subtitle, date} = item.fields;
       const id = item.sys.id;
