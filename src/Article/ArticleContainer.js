@@ -32,14 +32,16 @@ class ArticleContainer extends Component {
 
     return (
       <div>
-        { title &&
-        <ArticleView
-          title={title}
-          subtitle={subtitle}
-          date={date}
-          body={body}
-          originalUrl={originalUrl}
-        /> }
+        { title ?
+          <ArticleView
+            title={title}
+            subtitle={subtitle}
+            date={date}
+            body={body}
+            originalUrl={originalUrl}
+          />
+          : <div>Loading</div>
+        }
       </div>
     )
   }
