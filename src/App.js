@@ -3,6 +3,10 @@ import {
   BrowserRouter as Router,
   Route
 } from 'react-router-dom'
+
+import { Provider } from 'react-redux'
+import store from './state/store'
+
 import Articles from './Articles/ArticlesRoute'
 import Article from './Article/ArticleRoute'
 import Work from './Work/Work'
@@ -13,15 +17,17 @@ import Icons from './partials/Icons'
 
 const App = () => (
   <Router>
-    <div>
-      <Icons/>
-      <Masthead/>
-      <Route exact name="articles" path="/articles" component={Articles}/>
-      <Route path="/articles/:id" component={Article}/>
-      <Route exact path="/work" component={Work}/>
-      <Route exact path="/styleguide" component={Styleguide}/>
-      <Footer/>
-    </div>
+    <Provider store={store}>
+      <div>
+        <Icons/>
+        <Masthead/>
+        <Route exact name="articles" path="/articles" component={Articles}/>
+        <Route path="/articles/:id" component={Article}/>
+        <Route exact path="/work" component={Work}/>
+        <Route exact path="/styleguide" component={Styleguide}/>
+        <Footer/>
+      </div>
+    </Provider>
   </Router>
 )
 

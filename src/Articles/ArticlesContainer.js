@@ -1,11 +1,18 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 import { getEntries } from '../utils/contentful'
 import ArticlesItemView from './ArticlesItemView'
+import { fetchArticles } from '../state/actionCreators'
 
 class ArticlesContainer extends Component {
+  constructor(props) {
+    super(props);
+    this.handleFetchArticles = this.handleFetchArticles.bind(this);
+  }
+
   componentDidMount () {
-    if (window.localStorage.getItem('posts')) {
-      this.props.handleSetPosts(JSON.parse(window.localStorage.getItem('posts')))
+    if (window.localStorage.getItem('articles')) {
+      this.handleFetchArticles(JSON.parse(window.localStorage.getItem('articles')))
       return;
     }
     console.log('Fetching entries...')
@@ -13,21 +20,27 @@ class ArticlesContainer extends Component {
     getEntries({
       content_type: 'article',
       order: 'sys.createdAt',
+      select: 'sys,fields.title,fields.subtitle,fields.date',
     })
-      .then((response) => {
-        this.props.handleSetPosts(response.items)
-        window.localStorage.setItem('posts', JSON.stringify(response.items))
-      })
-      .catch((error) => {
-        console.log('\x1b[error occured')
-        console.log(error)
-      })
+    .then((response) => {
+      console.log('response', response);
+      this.handleFetchArticles(response.items)
+      window.localStorage.setItem('articles', JSON.stringify(response.items))
+    })
+    .catch((error) => {
+      console.log('error occured')
+      console.log(error)
+    })
+  }
+
+  handleFetchArticles(response) {
+    this.props.dispatch(fetchArticles(response))
   }
 
   render () {
-    const {posts} = this.props;
-    console.log('posts', posts);
-    const postsList = posts.map((item) => {
+    const { articles } = this.props;
+    // console.log('articles', articles);
+    const articlesList = articles.map((item) => {
       const {title, subtitle, date} = item.fields;
       const id = item.sys.id;
       return (
@@ -46,8 +59,8 @@ class ArticlesContainer extends Component {
         <div className="contentList-group">
           <ul className="contentList-group-items">
             {
-              posts.length > 0 ?
-                postsList
+              articles.length > 0 ?
+                articlesList
               : <div>Loading</div>
             }
           </ul>
@@ -57,4 +70,10 @@ class ArticlesContainer extends Component {
   }
 }
 
-export default ArticlesContainer
+const mapStateToProps = (state) => {
+  return {
+    articles: state.articles
+  }
+}
+
+export default connect(mapStateToProps)(ArticlesContainer)
