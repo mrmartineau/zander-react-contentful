@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "contentful": "beta",
+    "contentful": "^4.1.2",
     "dashify": "^0.2.2",
     "normalize.css": "^5.0.0",
     "parse-domain": "^1.1.0",
