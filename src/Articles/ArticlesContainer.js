@@ -1,40 +1,18 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { getEntries } from '../utils/contentful'
 import ArticlesItemView from './ArticlesItemView'
 import { fetchArticles } from '../state/actionCreators'
 
 class ArticlesContainer extends Component {
-  constructor(props) {
-    super(props);
-    this.handleFetchArticles = this.handleFetchArticles.bind(this);
-  }
-
   componentDidMount () {
-    if (window.localStorage.getItem('articles')) {
-      this.handleFetchArticles(JSON.parse(window.localStorage.getItem('articles')))
-      return;
+    // if (window.localStorage.getItem('articles')) {
+    //   this.handleFetchArticles(JSON.parse(window.localStorage.getItem('articles')))
+    //   return;
+    // }
+
+    if (this.props.articles.length < 1) {
+      this.props.dispatch(fetchArticles())
     }
-    console.log('Fetching entries...')
-
-    getEntries({
-      content_type: 'article',
-      order: 'sys.createdAt',
-      select: 'sys,fields.title,fields.subtitle,fields.date',
-    })
-    .then((response) => {
-      console.log('response', response);
-      this.handleFetchArticles(response.items)
-      window.localStorage.setItem('articles', JSON.stringify(response.items))
-    })
-    .catch((error) => {
-      console.log('error occured')
-      console.log(error)
-    })
-  }
-
-  handleFetchArticles(response) {
-    this.props.dispatch(fetchArticles(response))
   }
 
   render () {

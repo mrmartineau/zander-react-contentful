@@ -1,4 +1,4 @@
-import { FETCH_ARTICLES } from './actions'
+import { SET_ARTICLES } from './actions'
 
 const DEFAULT_STATE = {
   articles: [],
@@ -15,7 +15,7 @@ const setArticles = (state, action) => {
 
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
-    case FETCH_ARTICLES:
+    case SET_ARTICLES:
       return setArticles(state, action)
     default:
       return state
