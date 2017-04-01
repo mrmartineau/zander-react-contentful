@@ -1,0 +1,11 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bio snapshot test 1`] = `
+<div>
+  <ReactMarkdown
+    containerTagName="div"
+    parserOptions={Object {}}
+    source=""
+  />
+</div>
+`;

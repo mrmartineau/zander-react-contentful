@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Footer snapshot test 1`] = `
+<footer
+  className="footer"
+  role="contentinfo"
+>
+  <div
+    className="l-container"
+  >
+    <Home />
+    <hr
+      className="hr--short"
+    />
+    <Nav
+      className="nav--footer"
+      extras={true}
+    />
+    <NavSocial />
+  </div>
+</footer>
+`;

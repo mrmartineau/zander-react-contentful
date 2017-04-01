@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header snapshot test 1`] = `
+<header
+  className="header l-container header--article"
+>
+  <div
+    className="header-inner"
+  >
+    <h1
+      className="header-title p-name"
+      itemProp="headline"
+    >
+      The title
+    </h1>
+    <h2
+      className="header-subtitle p-summary"
+    >
+      The subtitle
+    </h2>
+    <div
+      className="header-meta"
+    >
+      <time
+        className="dt-published"
+        dateTime="2017-02-02T00:00+00:00"
+      >
+        4
+         
+        Feb
+         
+        2017
+         
+      </time>
+      <meta
+        content="2017-02-02T00:00+00:00"
+        itemProp="datePublished"
+      />
+    </div>
+  </div>
+  <hr
+    className="hr--short"
+  />
+</header>
+`;

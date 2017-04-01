@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Masthead snapshot test 1`] = `
+<header
+  className="masthead"
+  id="masthead"
+  role="banner"
+>
+  <Link
+    className="logo"
+    replace={false}
+    to="/"
+  >
+    <svg
+      className="logo-icon"
+    >
+      <use
+        xlinkHref="#icon-zmLogo"
+      />
+    </svg>
+    <span
+      className="is-visuallyHidden"
+    >
+      Zander Martineau
+    </span>
+  </Link>
+  <Nav
+    className="nav--masthead"
+  />
+</header>
+`;

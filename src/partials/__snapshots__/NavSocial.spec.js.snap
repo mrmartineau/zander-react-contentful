@@ -1,0 +1,83 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`NavSocial snapshot test 1`] = `
+<nav
+  className="navSocial"
+>
+  <a
+    className="navSocial-link"
+    href="http://twitter.com/mrmartineau"
+    target="_blank"
+    title="Follow Zander on Twitter"
+  >
+    <svg
+      className="navSocial-link-icon"
+    >
+      <use
+        xlinkHref="#icon-twitter"
+      />
+    </svg>
+  </a>
+  <a
+    className="navSocial-link"
+    href="http://github.com/mrmartineau"
+    target="_blank"
+    title="View Zander's open source code on Github"
+  >
+    <svg
+      className="navSocial-link-icon"
+    >
+      <use
+        xlinkHref="#icon-github"
+      />
+    </svg>
+    <span
+      className="is-visuallyHidden"
+    >
+      Github
+    </span>
+  </a>
+  <a
+    className="navSocial-link"
+    href="https://medium.com/@mrmartineau/"
+    target="_blank"
+    title="View Zander's Medium.com profile"
+  >
+    <svg
+      className="navSocial-link-icon"
+    >
+      <use
+        xlinkHref="#icon-medium"
+      />
+    </svg>
+  </a>
+  <a
+    className="navSocial-link"
+    href="https://instagram.com/mrmartineau"
+    target="_blank"
+    title="View Zander's npm packages"
+  >
+    <svg
+      className="navSocial-link-icon"
+    >
+      <use
+        xlinkHref="#icon-instagram"
+      />
+    </svg>
+  </a>
+  <a
+    className="navSocial-link"
+    href="https://www.npmjs.com/~mrmartineau"
+    target="_blank"
+    title="View Zander's npm packages"
+  >
+    <svg
+      className="navSocial-link-icon"
+    >
+      <use
+        xlinkHref="#icon-npm"
+      />
+    </svg>
+  </a>
+</nav>
+`;

@@ -1,0 +1,30 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article view snapshot test 1`] = `
+<article
+  className="article h-entry"
+  itemScope={true}
+  itemType="http://schema.org/Article"
+  role="article"
+>
+  <meta
+    content="Zander Martineau"
+    itemProp="author"
+  />
+  <Header
+    date="2017-02-02T00:00+00:00"
+    subtitle="The subtitle"
+    title="The title"
+  />
+  <div
+    className="l-container content content--article e-content"
+    itemProp="articleBody"
+  >
+    <ReactMarkdown
+      containerTagName="div"
+      parserOptions={Object {}}
+      source="The body"
+    />
+  </div>
+</article>
+`;

@@ -1,0 +1,61 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Nav snapshot test 1`] = `
+<nav
+  className="nav undefined"
+  role="navigation"
+>
+  <NavLink
+    activeClassName="is-active"
+    className="nav-link"
+    to="/articles"
+  >
+    Articles
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    className="nav-link"
+    to="/work"
+  >
+    Work
+  </NavLink>
+</nav>
+`;
+
+exports[`Nav with extras snapshot test 1`] = `
+<nav
+  className="nav nav--footer"
+  role="navigation"
+>
+  <NavLink
+    activeClassName="is-active"
+    className="nav-link"
+    to="/articles"
+  >
+    Articles
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    className="nav-link"
+    to="/work"
+  >
+    Work
+  </NavLink>
+  <NavLink
+    activeClassName="is-active"
+    className="nav-link"
+    title="View this site's style guide"
+    to="/styleguide"
+  >
+    Style guide
+  </NavLink>
+  <Link
+    className="nav-link"
+    replace={false}
+    title="Fork this site's source code"
+    to="http://github.com/mrmartineau/zander.wtf"
+  >
+    Source
+  </Link>
+</nav>
+`;
