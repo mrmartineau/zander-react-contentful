@@ -1,0 +1,38 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article view snapshot test 1`] = `
+<li
+  className="contentList-group-items-item"
+>
+  <Link
+    className="infoLink"
+    replace={false}
+    title="Read The title"
+    to="/articles/undefined"
+  >
+    <div
+      className="infoLink-content"
+    >
+      <div
+        className="infoLink-content-title"
+      >
+        The title
+      </div>
+      <div
+        className="infoLink-content-excerpt"
+      >
+        The subtitle
+      </div>
+    </div>
+    <time
+      className="infoLink-date"
+    >
+      4
+       
+      Feb
+       
+      2017
+    </time>
+  </Link>
+</li>
+`;
