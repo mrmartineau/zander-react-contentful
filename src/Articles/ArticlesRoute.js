@@ -1,5 +1,5 @@
-import React from 'react'
-import ArticlesContainer from './ArticlesContainer'
+import React from 'react';
+import ArticlesContainer from './ArticlesContainer';
 
 const ArticlesRoute = () => (
   <div className="l-container content">
@@ -7,6 +7,6 @@ const ArticlesRoute = () => (
       <ArticlesContainer />
     </div>
   </div>
-)
+);
 
-export default ArticlesRoute
+export default ArticlesRoute;
