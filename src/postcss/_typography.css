@@ -37,7 +37,7 @@ body {
 	line-height: $leading-base;
 	color: $color-text;
 	font-weight: 300;
-	font-feature-settings: "liga","dlig", "hist";
+	font-feature-settings: "liga", "dlig", "hist";
 	font-variant-ligatures: common-ligatures discretionary-ligatures historical-ligatures;
 }
 
@@ -58,7 +58,12 @@ p {
 /**
  * Headings
  */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
 	font-family: $font-family-headings;
 	font-weight: $font-weight-headings;
 	line-height: $line-height-headings;

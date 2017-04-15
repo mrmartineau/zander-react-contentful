@@ -30,7 +30,6 @@ div.highlighter-rouge {
 		&:after {
 			background-color: $color-primary;
 		}
-
 	}
 
 	&--code {

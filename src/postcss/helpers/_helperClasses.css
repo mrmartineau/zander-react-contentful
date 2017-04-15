@@ -52,7 +52,7 @@
 	position: absolute;
 	width: 1px;
 
-	/*Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p*/
+	/*Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard: h5bp.com/p */
 	&.focusable:active,
 	&.focusable:focus {
 		clip: auto;
@@ -80,10 +80,9 @@
 	float: none;
 }
 
-.l-mb0 { margin-bottom: 0 !important;}
-.l-mb1 { margin-bottom: 1rem !important;}
-.l-mt0 { margin-top:    0 !important;}
-
+.l-mb0 { margin-bottom: 0 !important; }
+.l-mb1 { margin-bottom: 1rem !important; }
+.l-mt0 { margin-top: 0 !important; }
 
 /**
  * Responsive Utilities
@@ -99,7 +98,7 @@ textarea[contenteditable] {
 }
 
 .promote-layer {
-  /*
+	/*
   This may promote the layer to a composited
   layer.
 
@@ -107,7 +106,7 @@ textarea[contenteditable] {
 
   #perfmatters
   */
-  backface-visibility: hidden;
+	backface-visibility: hidden;
 }
 
 /*Add the default transition to any element*/
@@ -117,6 +116,12 @@ textarea[contenteditable] {
 
 /*Faster taps on mobile devices*/
 /*See https://adactio.com/journal/10019 for more info*/
-a, button, input, select, textarea, label, summary {
+a,
+button,
+input,
+select,
+textarea,
+label,
+summary {
 	touch-action: manipulation;
 }

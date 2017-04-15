@@ -1,4 +1,5 @@
-.contentList {}
+.contentList {
+}
 
 .contentList-group {
 	& + & {
@@ -13,11 +14,10 @@
 			margin-top: -1px;
 		}
 	}
-
 }
 
 .contentList-group-year {
-	padding: .4em 0;
+	padding: 0.4em 0;
 
 	@media >mid {
 		width: 25%;
@@ -29,7 +29,7 @@
 	padding: 0;
 	list-style-type: none;
 
-  /* TODO: add this back once the years are correctly showing */
+	/* TODO: add this back once the years are correctly showing */
 	/*@media >mid {
 		width: 75%;
 	}*/
@@ -37,6 +37,6 @@
 
 .contentList-group-items-item {
 	display: block;
-	padding: .4em 0;
+	padding: 0.4em 0;
 	border-bottom: 1px solid $grayDark;
 }

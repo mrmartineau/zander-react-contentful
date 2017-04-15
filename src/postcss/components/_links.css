@@ -3,14 +3,17 @@
  */
 a {
 	transition: $default-transition;
-	cursor: url(/assets/img/cursors/middle-finger@0,5x.png) 10 2, pointer !important;
+	cursor: url(/assets/img/cursors/middle-finger@0, 5x.png) 10 2, pointer !important;
 
-	&, &:link, &:visited {
+	&,
+	&:link,
+	&:visited {
 		color: $color-text;
 		text-decoration: none;
 	}
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		color: $color-link-default;
 	}
 
@@ -19,7 +22,8 @@ a {
 	}
 }
 
-.pagination {}
+.pagination {
+}
 
 .pagination-btn {
 	margin-right: 1rem;
@@ -27,12 +31,15 @@ a {
 
 .article a,
 p a {
-	&, &:link, &:visited {
+	&,
+	&:link,
+	&:visited {
 		color: $color-link-default;
 		text-decoration: none;
 	}
 
-	&:hover, &:focus {
+	&:hover,
+	&:focus {
 		/*border-bottom: 2px solid $color-link-default;*/
 		/*font-weight: bold;*/
 		/*letter-spacing: 0.1em;*/
