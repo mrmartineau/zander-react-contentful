@@ -1,4 +1,4 @@
-import { FETCH_ARTICLES, ADD_ARTICLE } from './actions';
+import { FETCH_ARTICLES, ADD_ARTICLE, FETCH_CASE_STUDIES } from './actions';
 
 const DEFAULT_STATE = {
   articles: [],
@@ -20,12 +20,21 @@ const fetchArticles = (state, action) => {
   });
 };
 
+// The list of case studies are added to the `caseStudies` array
+const fetchCaseStudies = (state, action) => {
+  return Object.assign({}, state, {
+    caseStudies: action.caseStudies,
+  });
+};
+
 const rootReducer = (state = DEFAULT_STATE, action) => {
   switch (action.type) {
     case ADD_ARTICLE:
       return addArticle(state, action);
     case FETCH_ARTICLES:
       return fetchArticles(state, action);
+    case FETCH_CASE_STUDIES:
+      return fetchCaseStudies(state, action);
     default:
       return state;
   }

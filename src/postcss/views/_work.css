@@ -76,6 +76,7 @@
 		margin-left: $common-spacing;
 	}
 }
+
 .piece-info-list-item {
 	position: relative;
 }
@@ -89,6 +90,7 @@
 }
 
 .piece-info-list-item-value {
+
 	@media >mid {
 		margin-left: 120px;
 	}
@@ -186,18 +188,20 @@
 		border-radius: 10px;
 	}
 }
+
 .piece-shots-shot-img {
 	display: block;
 }
 
 
 /*Portfolio*/
+
 @mixin project-colours #snippets, #DA37CF, #fff, #fff, #000;
 @mixin project-colours #programmersclipboard, #DA37CF, #fff, #fff, #000;
 @mixin project-colours #tmwunlimited, #000, #ef7521, #fff, #000;
 @mixin project-colours .piece--code, $pre-bgColor, $pre-textColor, #FAC863, #fff;
 @mixin project-colours #goenergyshopping, #d22a81, #fff, #E0FF3E, #fff;
-@mixin project-colours #kickoff, $kickoff-blueLt, #fff, #FE7C08, darken(#FE7C08, 10%);
+@mixin project-colours #kickoff, $kickoff-blueLt, #fff, #FE7C08, darken (#FE7C08, 10%);
 @mixin project-colours #strepsils-starmoments, #d22740, #fff, #E0FF3E, #fff;
 @mixin project-colours #lynxafrica, #00723B, #fff, #fff, #fff;
 @mixin project-colours #barilla, #001e43, #ffcc33, #fff, #c80c18;

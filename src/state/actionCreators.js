@@ -1,6 +1,9 @@
-import { FETCH_ARTICLES, ADD_ARTICLE, FETCH_WORK } from './actions';
+import { FETCH_ARTICLES, ADD_ARTICLE, FETCH_CASE_STUDIES } from './actions';
 import { getEntries, getEntry } from '../utils/contentful';
 
+/**
+ * Single articles
+ */
 // Add a single article
 export const addArticle = (fields, id) => {
   return {
@@ -26,6 +29,9 @@ export const fetchArticle = id => {
   };
 };
 
+/**
+ * Article listing
+ */
 // Add all articles for the listing view
 export const setArticles = articles => {
   return {
@@ -40,7 +46,7 @@ export const fetchArticles = () => {
     console.log('Fetching entries...');
     getEntries({
       content_type: 'article',
-      order: 'sys.createdAt',
+      order: '-fields.date',
       select: 'sys,fields.title,fields.subtitle,fields.date',
     })
       .then(response => {
@@ -53,10 +59,32 @@ export const fetchArticles = () => {
   };
 };
 
-// Fetch all work items
-export const fetchWork = work => {
+/**
+ * Case Study listing
+ */
+// Add all case studies for the listing view
+export const setCaseStudies = caseStudies => {
   return {
-    type: FETCH_WORK,
-    work,
+    type: FETCH_CASE_STUDIES,
+    caseStudies,
+  };
+};
+
+// Fetch all case studies
+export const fetchCaseStudies = () => {
+  return function(dispatch, getState) {
+    console.log('Fetching work entries...');
+    getEntries({
+      content_type: 'work',
+      order: '-fields.date',
+    })
+      .then(response => {
+        console.log(response);
+        dispatch(setCaseStudies(response.items));
+      })
+      .catch(error => {
+        console.log('error occured');
+        console.log(error);
+      });
   };
 };
