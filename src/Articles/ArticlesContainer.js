@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import ArticlesItemView from './ArticlesItemView';
+import Year from './Year';
 import { fetchArticles } from '../state/actionCreators';
 
 class ArticlesContainer extends Component {
@@ -12,27 +12,21 @@ class ArticlesContainer extends Component {
 
   render() {
     const { articles } = this.props;
-    const articlesList = articles.map(item => {
-      const { title, subtitle, date } = item.fields;
-      const id = item.sys.id;
-      return (
-        <ArticlesItemView
-          title={title}
-          subtitle={subtitle}
-          date={date}
-          id={id}
-          key={id}
-        />
-      );
+    const years = [];
+    let lastYear = null;
+
+    articles.forEach(item => {
+      if (item.year !== lastYear) {
+        years.push(
+          <Year year={item.year} articles={articles} key={item.year} />,
+        );
+      }
+      lastYear = item.year;
     });
 
     return (
       <div className="contentList">
-        <div className="contentList-group">
-          <ul className="contentList-group-items">
-            {articles.length > 0 ? articlesList : <div>Loading</div>}
-          </ul>
-        </div>
+        {years}
       </div>
     );
   }

@@ -1,12 +1,14 @@
 import React from 'react';
 import ArticlesContainer from './ArticlesContainer';
+import Header from '../partials/Header';
 
 const ArticlesRoute = () => (
-  <div className="l-container content">
-    <div className="contentList">
+  <main>
+    <Header title="Articles" />
+    <div className="l-container content">
       <ArticlesContainer />
     </div>
-  </div>
+  </main>
 );
 
 export default ArticlesRoute;

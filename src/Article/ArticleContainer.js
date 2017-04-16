@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import ArticleView from './ArticleView';
 import { fetchArticle } from '../state/actionCreators';
-import dashify from 'dashify';
+// import dashify from 'dashify';
 
 class ArticleContainer extends Component {
   componentDidMount() {

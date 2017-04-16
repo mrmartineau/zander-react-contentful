@@ -15,8 +15,12 @@ const addArticle = (state, action) => {
 
 // The list of articles are added to the `articles` array
 const fetchArticles = (state, action) => {
+  const newArticles = action.articles.map(item => {
+    item.year = new Date(item.fields.date).getFullYear();
+    return item;
+  });
   return Object.assign({}, state, {
-    articles: action.articles,
+    articles: newArticles,
   });
 };
 

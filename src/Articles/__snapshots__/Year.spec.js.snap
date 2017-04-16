@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Year view snapshot test 1`] = `
+<div
+  className="contentList-group"
+>
+  <aside
+    className="contentList-group-year"
+    role="complementary"
+  >
+    2017
+  </aside>
+  <ul
+    className="contentList-group-items"
+  />
+</div>
+`;

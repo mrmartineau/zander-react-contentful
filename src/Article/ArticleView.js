@@ -23,6 +23,8 @@ const ArticleView = props => (
       itemProp="articleBody"
     >
       <ReactMarkdown source={props.body} />
+
+      <hr className="hr--short" />
     </div>
   </article>
 );

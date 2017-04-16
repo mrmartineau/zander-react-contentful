@@ -1,5 +1,4 @@
 import React from 'react';
-// import dashify from 'dashify'
 import { Link } from 'react-router-dom';
 import months from '../utils/months';
 
@@ -21,8 +20,6 @@ const ArticlesItemView = props => {
           {formattedDate.getDay()}
           {' '}
           {months[formattedDate.getMonth()]}
-          {' '}
-          {formattedDate.getUTCFullYear()}
         </time>
       </Link>
     </li>
