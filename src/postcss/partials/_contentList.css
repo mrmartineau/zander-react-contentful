@@ -7,7 +7,7 @@
 	}
 
 	@media >mid {
-		border-top: 1px solid $grayDark;
+		// border-top: 1px solid $grayDark;
 		display: flex;
 
 		& + & {
@@ -38,5 +38,5 @@
 .contentList-group-items-item {
 	display: block;
 	padding: 0.4em 0;
-	border-bottom: 1px solid $grayDark;
+	// border-bottom: 1px solid $grayDark;
 }
