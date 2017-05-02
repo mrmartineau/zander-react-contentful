@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ArticleView from './ArticleView';
 import { fetchArticle } from '../state/actionCreators';
 // import dashify from 'dashify';
+import Main from '../partials/Main';
 
 class ArticleContainer extends Component {
   componentDidMount() {
@@ -15,7 +16,7 @@ class ArticleContainer extends Component {
     const { title, subtitle, date, body, originalUrl } = this.props.fields;
 
     return (
-      <div>
+      <Main>
         {title
           ? <ArticleView
               title={title}
@@ -25,7 +26,7 @@ class ArticleContainer extends Component {
               originalUrl={originalUrl}
             />
           : <div>Loading</div>}
-      </div>
+      </Main>
     );
   }
 }
